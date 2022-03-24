@@ -1,11 +1,20 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'react-dom';
 import './index.css';
-import App from './app.jsx';
+import './reset.css';
+import App from './app';
+import '@fortawesome/fontawesome-free/js/all.js';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(
-  <React.StrictMode>
+const rootElement = document.getElementById('root');
+
+document.cookie = 'safeCookie1=foo; SameSite=Lax';
+document.cookie = 'safeCookie2=foo';
+document.cookie = 'crossCookie=bar; SameSite=None; Secure';
+
+ReactDom.render(
+  <BrowserRouter>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </BrowserRouter>,
+  rootElement
 );

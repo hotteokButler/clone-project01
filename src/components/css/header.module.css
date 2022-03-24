@@ -1,0 +1,53 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  margin: 0 0 20px;
+  align-items: center;
+  background-color: #232323;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
+  z-index: 999999;
+}
+.logo {
+  color: #dd573f;
+  font-size: 1.8rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.logoTxt {
+  display: inline-block;
+  padding: 0.3rem 0 0 0.3rem;
+  color: #fff;
+  font-size: 0.8rem;
+  vertical-align: top;
+}
+.userIcon {
+  color: #d2d2d2;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.4rem;
+  background-color: #777;
+  border-radius: 50%;
+}
+.userIcon:hover {
+  opacity: 0.85;
+}
+.moreIcon {
+  color: #fcfcfc;
+  font-size: 1.5rem;
+  padding: 0.2rem 0.4rem;
+  margin: 0 0 0 10px;
+}
+
+@media (min-width: 780px) {
+  .header {
+    padding: 1.2rem 2rem;
+  }
+  .logoTxt {
+    font-size: 1rem;
+  }
+}
