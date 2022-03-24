@@ -13,7 +13,7 @@ document.cookie = 'safeCookie2=foo';
 document.cookie = 'crossCookie=bar; SameSite=None; Secure';
 
 ReactDom.render(
-  <BrowserRouter>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <App />
   </BrowserRouter>,
   rootElement
