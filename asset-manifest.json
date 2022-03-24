@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hotteokButler/clone-project01/static/css/main.71b11703.css",
+    "main.js": "/hotteokButler/clone-project01/static/js/main.40bebd71.js",
+    "index.html": "/hotteokButler/clone-project01/index.html",
+    "main.71b11703.css.map": "/hotteokButler/clone-project01/static/css/main.71b11703.css.map",
+    "main.40bebd71.js.map": "/hotteokButler/clone-project01/static/js/main.40bebd71.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.71b11703.css",
+    "static/js/main.40bebd71.js"
+  ]
+}
