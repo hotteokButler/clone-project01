@@ -1,11 +1,11 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Video = memo((props) => {
   const location = useLocation();
   const videoId = location.state;
   console.log(videoId);
-  const src = `https://www.youtube.com/embed/${videoId}`;
+  const src = `https://www.youtube-nocookie.com/embed/${videoId}`;
 
   return (
     <div>

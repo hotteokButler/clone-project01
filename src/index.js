@@ -6,14 +6,14 @@ import App from './app';
 import '@fortawesome/fontawesome-free/js/all.js';
 import { BrowserRouter } from 'react-router-dom';
 
+document.cookie = 'safeCookie1=foo;  SameSite=Lax';
+document.cookie = 'safeCookie2=foo; SameSite=Lax';
+document.cookie = 'crossCookie=bar;  SameSite=None; Secure';
+
 const rootElement = document.getElementById('root');
 
-document.cookie = 'safeCookie1=foo; SameSite=Lax';
-document.cookie = 'safeCookie2=foo';
-document.cookie = 'crossCookie=bar; SameSite=None; Secure';
-
 ReactDom.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <BrowserRouter>
     <App />
   </BrowserRouter>,
   rootElement

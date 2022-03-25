@@ -6,7 +6,7 @@ import SearchForm from './searchForm';
 const Header = memo((props) => {
   return (
     <header id="header" className={header.header}>
-      <Link to="/main">
+      <Link to="/">
         <h1 className={header.logo}>
           <i className="fa-brands fa-youtube"></i>
           <span className={header.logoTxt}>YOUTUBE</span>

@@ -11,13 +11,13 @@ const App = (props) => {
   const [thumbnail, setThumbnail] = useState([]);
 
   useEffect(() => {
-    const requestOptions = {
+    var requestOptions = {
       method: 'GET',
       redirect: 'follow',
     };
 
     fetch(
-      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&key=${apiKey}`,
+      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&regionCode=KR&key=${apiKey}`,
       requestOptions
     )
       .then((response) => response.json())
@@ -35,7 +35,7 @@ const App = (props) => {
       <div id="wrap">
         <div className="container">
           <Routes>
-            <Route path="/main" element={<ThumbnailList thumbnail={thumbnail} />} />
+            <Route path="/" element={<ThumbnailList thumbnail={thumbnail} />} />
             <Route path="/channel" element={<Video />} />
           </Routes>
         </div>
