@@ -36,13 +36,13 @@ const App = (props) => {
     <>
       <Header />
       <Routes>
-        <Route exact path="/" element={<Nav />} />
+        <Route exact index element={<Nav />} />
       </Routes>
       <div id="wrap">
         <div className="container">
           <Routes>
-            <Route exact path="/" element={<ThumbnailList thumbnail={thumbnail} />} />
-            <Route path="/channel" element={<VideoPage />} />
+            <Route exact index element={<ThumbnailList thumbnail={thumbnail} />} />
+            <Route path="channel" element={<VideoPage />} />
           </Routes>
         </div>
       </div>

@@ -10,7 +10,7 @@ const CommentsList = (props) => {
           const dataList = list.snippet.topLevelComment.snippet;
           return (
             <Comment
-              key={dataList.updatedAt}
+              key={Math.random()}
               authorName={dataList.authorDisplayName}
               authorProfile={dataList.authorProfileImageUrl}
               commentLikes={dataList.likeCount}
