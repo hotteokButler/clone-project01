@@ -19,7 +19,9 @@
 }
 .text {
   width: calc(100% - 70px);
-  padding: 0 10% 15px 0;
+  padding: 0 8% 15px 0;
+}
+.commentText {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

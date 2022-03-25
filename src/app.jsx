@@ -4,7 +4,6 @@ import './app.css';
 import Header from './components/header';
 import Nav from './components/nav';
 import ThumbnailList from './components/thumbnailList';
-import Video from './components/video';
 import VideoPage from './components/videoPage';
 
 const App = (props) => {
@@ -12,19 +11,23 @@ const App = (props) => {
   const [thumbnail, setThumbnail] = useState([]);
 
   useEffect(() => {
-    var requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-    };
+    async function getDataFromYoutube(apiKey) {
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+      };
 
-    fetch(
-      `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&regionCode=KR&key=${apiKey}`,
-      requestOptions
-    )
-      .then((response) => response.json())
+      let response = await fetch(
+        `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&regionCode=KR&key=${apiKey}`,
+        requestOptions
+      );
+
+      return await response.json();
+    }
+
+    getDataFromYoutube(apiKey)
       .then((result) => {
         setThumbnail(result.items);
-        console.log(result);
       })
       .catch((error) => console.log('error', error));
   }, []);
@@ -33,12 +36,12 @@ const App = (props) => {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Nav />} />
+        <Route exact path="/" element={<Nav />} />
       </Routes>
       <div id="wrap">
         <div className="container">
           <Routes>
-            <Route path="/" element={<ThumbnailList thumbnail={thumbnail} />} />
+            <Route exact path="/" element={<ThumbnailList thumbnail={thumbnail} />} />
             <Route path="/channel" element={<VideoPage />} />
           </Routes>
         </div>

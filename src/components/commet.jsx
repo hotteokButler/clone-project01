@@ -1,5 +1,6 @@
 import React, { memo, useEffect, useState } from 'react';
 import comment from './css/comment.module.css';
+
 const Comment = memo((props) => {
   const [name, getName] = useState(null);
   const [profile, getProfile] = useState(null);
@@ -13,7 +14,7 @@ const Comment = memo((props) => {
     setLikes(props.commentLikes);
     setDisLikes(props.commentDisLikes ? props.commentDisLikes : 0);
     getCommentTxt(props.commentTxt);
-  }, [likes, disLikes]);
+  }, []);
 
   return (
     <div className={comment.card}>
@@ -22,7 +23,7 @@ const Comment = memo((props) => {
       </figure>
       <p className={comment.text}>
         <span className={comment.name}>{name}</span>
-        <span className={comment.text}>{commentTxt}</span>
+        <span className={comment.commentText}>{commentTxt}</span>
       </p>
       <p className={comment.buttons}>
         <button className={comment.like}>

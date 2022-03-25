@@ -1,17 +1,21 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import thumbnail from './css/thumbnails.module.css';
 
 const Thumbnail = memo((props) => {
-  const videoData = {
-    thumbnailUrl: props.thumbnails.high.url,
-    title: props.title,
-    channelName: props.channel,
-    videoId: props.vidoId,
-    videoDesc: props.description,
-    videotag: props.tags,
-    videoPublishedData: props.publishDate,
-  };
+  const [videoData, getVideoData] = useState({});
+
+  useEffect(() => {
+    getVideoData({
+      thumbnailUrl: props.thumbnails.high.url,
+      title: props.title,
+      channelName: props.channel,
+      videoId: props.vidoId,
+      videoDesc: props.description,
+      videotag: props.tags,
+      videoPublishedData: props.publishDate,
+    });
+  }, []);
 
   return (
     <li className={thumbnail.card}>

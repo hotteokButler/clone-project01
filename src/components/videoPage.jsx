@@ -6,13 +6,15 @@ import CommentsList from './commentsList';
 
 const VideoPage = () => {
   const location = useLocation();
-  const videoData = location.state;
-  const apiKey = process.env.REACT_APP_KEY;
+  const [videoData, getVideoData] = useState(location.state);
   const [toggleState, setToggleState] = useState(false);
   const [newDate, parseDate] = useState(null);
   const [comments, setComments] = useState(null);
+  const [videoId, getvideoId] = useState(videoData.videoId);
 
   useEffect(() => {
+    getVideoData(location.state);
+
     // jason Date => 년,월,일 변환
     parseDate(() => {
       const date = new Date(videoData.videoPublishedData);
@@ -23,16 +25,25 @@ const VideoPage = () => {
     });
 
     //comments 가져오기
-    const requestOptions = {
-      method: 'GET',
-      redirect: 'follow',
-    };
 
-    fetch(
-      `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=Bl0s-1c5L0M&maxResults=25&key=${apiKey}`,
-      requestOptions
-    )
-      .then((response) => response.json())
+    videoData && getvideoId(videoData.videoId);
+
+    async function getYouTubeData(videoId) {
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+      };
+      const apiKey = process.env.REACT_APP_KEY;
+
+      let response = await fetch(
+        `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=20&=25&key=${apiKey}`,
+        requestOptions
+      );
+
+      return await response.json();
+    }
+
+    getYouTubeData(videoId && videoId)
       .then((result) => setComments(result.items))
       .catch((error) => console.log('error', error));
   }, []);
@@ -68,7 +79,7 @@ const VideoPage = () => {
         </div>
         {/* video */}
         <section className={videoPage.commentsList}>
-          <CommentsList comments={comments} />
+          <CommentsList comments={comments && comments} />
         </section>
       </section>
     </section>

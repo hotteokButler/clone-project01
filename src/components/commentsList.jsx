@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Comment from './commet';
 
 const CommentsList = (props) => {
-  console.log(props.comments);
   return (
     <>
       <p>댓글</p>
