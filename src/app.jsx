@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Outlet, Route, Routes } from 'react-router-dom';
 import './app.css';
 import Header from './components/header';
 import Nav from './components/nav';
 import ThumbnailList from './components/thumbnailList';
 import Video from './components/video';
+import VideoPage from './components/videoPage';
 
 const App = (props) => {
   const apiKey = process.env.REACT_APP_KEY;
@@ -31,12 +32,14 @@ const App = (props) => {
   return (
     <>
       <Header />
-      <Nav />
+      <Routes>
+        <Route path="/" element={<Nav />} />
+      </Routes>
       <div id="wrap">
         <div className="container">
           <Routes>
             <Route path="/" element={<ThumbnailList thumbnail={thumbnail} />} />
-            <Route path="/channel" element={<Video />} />
+            <Route path="/channel" element={<VideoPage />} />
           </Routes>
         </div>
       </div>

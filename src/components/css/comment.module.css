@@ -1,0 +1,63 @@
+.card {
+  position: relative;
+  display: flex;
+  padding: 1rem 0.5rem;
+  align-items: center;
+  color: #fcfcfc;
+  border-bottom: 1px solid #555;
+}
+.profile {
+  width: 50px;
+  height: 50px;
+  margin: 0 20px 0 0;
+  border-radius: 50%;
+  background-color: tomato;
+  overflow: hidden;
+}
+.color {
+  color: #fcfcfc;
+}
+.text {
+  width: calc(100% - 70px);
+  padding: 0 10% 15px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-self: flex-start;
+}
+.text span {
+  display: block;
+}
+.name {
+  margin: 0 0 4px;
+  font-size: 13px;
+}
+.buttons {
+  position: absolute;
+  bottom: 2px;
+  left: 72px;
+  display: flex;
+  align-items: center;
+}
+.like,
+.dislike,
+.reply {
+  display: block;
+}
+
+.like span,
+.dislike span {
+  display: inline-block;
+  margin: 0 0 0 4px;
+  color: #fcfcfc;
+}
+.like,
+.dislike {
+  padding: 8px;
+}
+.reply {
+  margin: 0 0 0 4px;
+  text-decoration: underline;
+  color: #999;
+  font-size: 12px;
+}

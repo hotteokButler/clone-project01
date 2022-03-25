@@ -1,0 +1,76 @@
+.page {
+  width: 100vw;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.videoSection {
+  width: 100%;
+}
+.video {
+  width: 100%;
+  height: 280px;
+}
+.descBox {
+  position: relative;
+  padding: 1.5rem 0 2rem;
+  color: #fcfcfc;
+  border-bottom: 1px solid #888;
+}
+.desc {
+  margin: 0 1rem 1.5rem;
+  padding: 0 0 1.5rem;
+  border-bottom: 1px solid #888;
+}
+.title {
+  font-size: 1.2rem;
+  line-height: 1.2em;
+  margin: 0 0 10px;
+}
+.channel {
+  color: #fcfcfc;
+  font-size: 16px;
+  padding: 0 1rem;
+  margin: 0 0 1rem;
+}
+.publishDate {
+  font-size: 12px;
+  color: #d2d2d2;
+}
+.detail {
+  width: 100%;
+  line-height: 1.6rem;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 0 1.2rem;
+}
+.detail.shortcut {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.more {
+  position: absolute;
+  bottom: -0.5rem;
+  font-size: 12px;
+  padding: 1rem;
+  color: #888;
+}
+.commentsList {
+  padding: 2rem 1.2rem;
+  color: #fcfcfc;
+}
+@media (min-width: 768px) {
+  .video {
+    height: 380px;
+  }
+}
+@media (min-width: 1200px) {
+  .videoSection {
+    width: 70%;
+  }
+  .video {
+    height: 700px;
+  }
+}

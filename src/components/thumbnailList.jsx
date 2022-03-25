@@ -13,6 +13,9 @@ const ThumbnailList = (props) => {
             vidoId={list.id}
             title={list.snippet.title}
             thumbnails={list.snippet.thumbnails}
+            description={list.snippet.description}
+            tags={list.snippet.tags}
+            publishDate={list.snippet.publishedAt}
           />
         ))}
       </ul>
