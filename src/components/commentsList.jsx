@@ -4,7 +4,7 @@ import Comment from './commet';
 const CommentsList = (props) => {
   return (
     <>
-      <p>댓글</p>
+      <p className="comment-title">댓글</p>
       {props.comments &&
         props.comments.map((list) => {
           const dataList = list.snippet.topLevelComment.snippet;

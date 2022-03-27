@@ -63,7 +63,7 @@
 }
 @media (min-width: 768px) {
   .video {
-    height: 380px;
+    height: 430px;
   }
 }
 @media (min-width: 1200px) {
@@ -71,6 +71,6 @@
     width: 70%;
   }
   .video {
-    height: 700px;
+    height: 600px;
   }
 }

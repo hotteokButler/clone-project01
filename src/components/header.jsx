@@ -6,13 +6,18 @@ import SearchForm from './searchForm';
 const Header = memo((props) => {
   return (
     <header id="header" className={header.header}>
-      <Link to="/">
+      <Link
+        to="/"
+        onClick={() => {
+          props.onLogoClick();
+        }}
+      >
         <h1 className={header.logo}>
           <i className="fa-brands fa-youtube"></i>
           <span className={header.logoTxt}>YOUTUBE</span>
         </h1>
       </Link>
-      <SearchForm />
+      <SearchForm getSearchData={props.getSearchData && props.getSearchData} />
       <nav>
         <button className={header.userIcon}>
           <i className="fa-solid fa-user"></i>

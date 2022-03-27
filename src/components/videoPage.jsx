@@ -25,25 +25,20 @@ const VideoPage = () => {
     });
 
     //comments 가져오기
-
     videoData && getvideoId(videoData.videoId);
 
-    async function getYouTubeData(videoId) {
-      const requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
-      };
-      const apiKey = process.env.REACT_APP_KEY;
+    const apiKey = process.env.REACT_APP_KEY;
+    const requestOptions = {
+      method: 'GET',
+      redirect: 'follow',
+      mode: 'cors',
+    };
 
-      let response = await fetch(
-        `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=20&=25&key=${apiKey}`,
-        requestOptions
-      );
-
-      return await response.json();
-    }
-
-    getYouTubeData(videoId && videoId)
+    fetch(
+      `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&maxResults=20&=25&key=${apiKey}`,
+      requestOptions
+    )
+      .then((response) => response.json())
       .then((result) => setComments(result.items))
       .catch((error) => console.log('error', error));
   }, []);
