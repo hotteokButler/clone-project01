@@ -1,6 +1,6 @@
 # Youtube Clone (수업 듣기전! 홀로)
 
-<a href="https://62401652367498462387ea5e--youtubeclone-practice.netlify.app">배포사이트(Test version)</a>
+<a href="https://624018bb90a68f5b3584b526--youtubeclone-practice.netlify.app">배포사이트(Test version)</a>
 
 ## 개요
 
