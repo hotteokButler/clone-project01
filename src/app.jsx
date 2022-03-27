@@ -65,7 +65,7 @@ const App = (props) => {
         <div className="container">
           <Routes>
             <Route path="/" element={<ThumbnailList thumbnail={inputData ? inputData : thumbnail} />} />
-            <Route path="channel" element={<VideoPage />} />
+            <Route path="channel" element={<VideoPage thumbnail={inputData ? inputData : thumbnail} />} />
           </Routes>
         </div>
       </div>

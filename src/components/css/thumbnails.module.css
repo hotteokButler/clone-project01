@@ -1,14 +1,14 @@
 .card {
   width: 100%;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 10px auto;
   border-radius: 4px;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.8);
   overflow: hidden;
-  transition: 0.4s eas;
+  transition: 0.2s ease-out;
 }
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 1);
 }
 li a {

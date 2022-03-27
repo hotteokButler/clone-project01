@@ -3,18 +3,20 @@ import { useLocation } from 'react-router-dom';
 import Video from './video';
 import videoPage from './css/videoPage.module.css';
 import CommentsList from './commentsList';
+import VideoPageThumbnail from './videoPageThumbnail';
 
-const VideoPage = () => {
+const VideoPage = (props) => {
   const location = useLocation();
   const [videoData, getVideoData] = useState(location.state);
   const [toggleState, setToggleState] = useState(false);
   const [newDate, parseDate] = useState(null);
   const [comments, setComments] = useState(null);
   const [videoId, getvideoId] = useState(videoData.videoId);
+  const [thumbnailList, getThumbnail] = useState(props.thumbnail);
 
   useEffect(() => {
     getVideoData(location.state);
-
+    getThumbnail(props.thumbnail);
     // jason Date => 년,월,일 변환
     parseDate(() => {
       const date = new Date(videoData.videoPublishedData);
@@ -77,6 +79,7 @@ const VideoPage = () => {
           <CommentsList comments={comments && comments} />
         </section>
       </section>
+      <VideoPageThumbnail thumbnail={thumbnailList && thumbnailList} />
     </section>
   );
 };
