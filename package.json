@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://www.youtube-nocookie.com"
+  "proxy": "https://youtube.googleapis.com/youtube/v3"
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './app.css';
 import Header from './components/header';
 import Nav from './components/nav';
@@ -10,6 +10,7 @@ const App = (props) => {
   const [thumbnail, setThumbnail] = useState(null);
   const [inputData, setInputData] = useState(null);
   const apiKey = process.env.REACT_APP_KEY;
+  const navigate = useNavigate();
 
   useEffect(() => {
     const requestOptions = {
@@ -46,6 +47,8 @@ const App = (props) => {
     } else {
       setInputData(null);
     }
+
+    navigate('/');
   };
 
   const logoClickEvent = () => {
